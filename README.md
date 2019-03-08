@@ -10,7 +10,7 @@ I repot finns hela Android Studio-projektet, så det är bara att klona repot, o
 Jag började själv experimentera med det här typ i förra veckan, så mitt bästa tips är typ "Googla Android development
 tutorial". Däremot tänker jag att den här posten kan stå kvar, så kan vi fylla på den i takt med att vi upptäcker saker.
 
-*Network on main thread error - om man ska göra operationer som kräver nätverksanslutning måste man utföra dem i en
+* Network on main thread error - om man ska göra operationer som kräver nätverksanslutning måste man utföra dem i en
 egen tråd. Jag har gjort det här på två ställen i den existerande koden, dvs för login och för strecka, så bara att
 kolla där för att se hur man kan göra.
 
@@ -24,16 +24,16 @@ och sedan specificerar man vilken data man vill ha genom parametern apiType. Öv
 
 I nuläget finns de här funktionerna implementerade i API:t:
 
-*apiType=getID - tar in till parameter, username, och returnerar användar-id för det användarnamnet.
+* apiType=getID - tar in till parameter, username, och returnerar användar-id för det användarnamnet.
 
 #### Allmänt om strecklistan
 ##### SQL
 "Under motorhuven" är Strecklistan en SQL-databas. Den har 5 tabeller, log, prices, streck, users och variables.
 
 De tabeller som torde vara relevanta för oss är
-*prices - info om olika strecktyper. id, name, price.
-*streck - info om "vanliga" användare. id, nickname, name, email, balance, section (och lite till)
-*log - alla streck som nånsin dragits. I skrivande stund dryga 50,000 rader (!). id, who, time, action, param, där
+* prices - info om olika strecktyper. id, name, price.
+* streck - info om "vanliga" användare. id, nickname, name, email, balance, section (och lite till)
+* log - alla streck som nånsin dragits. I skrivande stund dryga 50,000 rader (!). id, who, time, action, param, där
 id alltså är ett id på själva strecket, who är id för streckaren, action är 1 om det är ett streck och 2 om det är
 en insättning och param är hur mycket det kostade.
 
