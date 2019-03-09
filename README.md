@@ -19,12 +19,13 @@ kolla där för att se hur man kan göra.
 #### API:t
 Jag tänker mig att jag kommer att utföra det mesta av arbetet med själva API:et från Strecklistans sida. Ni kommer att
 interagera med listan genom att skicka POST-requests till listan. Titta i koden för att se hur det görs. Jag har
-implementerat klassen HTTP för att göra det så smidigt som möjligt. POST-parametern "do" sätts alltså alltid till "api",
-och sedan specificerar man vilken data man vill ha genom parametern apiType. Övriga parametrar beror på vad man vill ha.
+implementerat klassen HTTP för att göra det så smidigt som möjligt. Man skickar post-requests till /streck/api.php, och använder alltid parametern apiType för att säga vilken funktion man vill använda. Övriga parametrar beror på vad man vill ha.
 
 I nuläget finns de här funktionerna implementerade i API:t:
 
-* apiType=getID - tar in till parameter, username, och returnerar användar-id för det användarnamnet.
+* apiType=getID - tar in en parameter, username, och returnerar användar-id för det användarnamnet.
+* apiType=getLogSince - tar in två parametrar, id och time, där time är unix-epoch-tiden som man ska börja fetcha vid. Returnerar strecktyp och kostnad för alla streck som personen med id:t har dragit sedan dess, som en kommaseparerad sträng med 2-tupler.
+* apiType=getStreckTypes - tar inte in några extra parametrar, utan returnerar helt kort och gott alla möjliga strecktyper, som en kommaseparerad sträng
 
 #### Allmänt om strecklistan
 ##### SQL
